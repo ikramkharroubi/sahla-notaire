@@ -38,11 +38,11 @@ export default function Home() {
               <div className="max-w-md mx-auto lg:mx-0">
                 <div className="space-y-3">
                   <h1 className="text-2xl md:text-3xl font-bold text-[#022840] leading-tight">
-                    Commencez à explorer les services administratifs au{' '}
-                    <span className="text-[#A66C4B]">Maroc</span>
+                    ابدأ في استكشاف الخدمات الإدارية في{' '}
+                    <span className="text-[#A66C4B]">المغرب</span>
                   </h1>
                   <p className="text-sm md:text-base text-[#022840]/70 max-w-sm">
-                    Trouvez et gérez vos documents administratifs facilement avec l'aide de nos experts locaux.
+                    اعثر على مستنداتك الإدارية وأدرها بسهولة بمساعدة خبرائنا المحليين.
                   </p>
                 </div>
                 <div className="mt-5">
@@ -56,7 +56,7 @@ export default function Home() {
                 <div className="absolute right-6 top-6 w-[85%] h-[280px] rounded-xl overflow-hidden shadow-lg z-20">
                   <img
                     src="https://images.pexels.com/photos/7012257/pexels-photo-7012257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    alt="Bureau administratif moderne"
+                    alt="مكتب إداري حديث"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black/5" />
@@ -84,8 +84,8 @@ export default function Home() {
       <section className="py-12 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-[#022840] mb-3">Recherche d'Administrations</h2>
-            <p className="text-[#555] text-lg max-w-2xl mx-auto">Trouvez facilement les administrations et bureaux dont vous avez besoin pour vos démarches administratives.</p>
+            <h2 className="text-3xl font-bold text-[#022840] mb-3">البحث عن الإدارات</h2>
+            <p className="text-[#555] text-lg max-w-2xl mx-auto">اعثر بسهولة على الإدارات والمكاتب التي تحتاجها لإجراءاتك الإدارية.</p>
           </div>
           
           {/* Filters */}
@@ -93,21 +93,21 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <select className="w-full py-2 bg-transparent border-b-2 border-[#037F8C] text-[#333] focus:outline-none">
-                  <option value="" disabled selected>Sélectionner une ville</option>
-                  <option value="casablanca">Casablanca</option>
-                  <option value="rabat">Rabat</option>
-                  <option value="marrakech">Marrakech</option>
-                  <option value="fes">Fès</option>
-                  <option value="tanger">Tanger</option>
+                  <option value="" disabled selected>اختر المدينة</option>
+                  <option value="casablanca">الدار البيضاء</option>
+                  <option value="rabat">الرباط</option>
+                  <option value="marrakech">مراكش</option>
+                  <option value="fes">فاس</option>
+                  <option value="tanger">طنجة</option>
                 </select>
               </div>
               <div>
                 <select className="w-full py-2 bg-transparent border-b-2 border-[#037F8C] text-[#333] focus:outline-none">
-                  <option value="" disabled selected>Type de service</option>
-                  <option value="documents-personnels">Documents personnels</option>
-                  <option value="services-sociaux">Services sociaux</option>
-                  <option value="taxes-et-impots">Taxes et impôts</option>
-                  <option value="entreprises">Services aux entreprises</option>
+                  <option value="" disabled selected>نوع الخدمة</option>
+                  <option value="documents-personnels">المستندات الشخصية</option>
+                  <option value="services-sociaux">الخدمات الاجتماعية</option>
+                  <option value="taxes-et-impots">الضرائب والرسوم</option>
+                  <option value="entreprises">خدمات الشركات</option>
                 </select>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Sidebar Categories */}
             <div className="border border-gray-100 rounded-xl p-5 overflow-y-scroll md:w-[270px] max-h-[600px] scrollbar-hide">
-              <h3 className="text-lg font-medium text-[#022840] mb-5">Catégories d'administrations</h3>
+              <h3 className="text-lg font-medium text-[#022840] mb-5">فئات الإدارات</h3>
 
               <div className="space-y-3">
                 {/* 1. Administrations Communales */}
@@ -129,12 +129,12 @@ export default function Home() {
                       className={`flex items-center justify-between cursor-pointer list-none rounded-lg p-2 ${selectedCategory === 1 ? 'bg-gray-100' : ''}`}
                       onClick={() => handleCategoryClick(1)}
                     >
-                      <span className="text-sm font-medium text-[#022840]">Administrations Communales</span>
+                      <span className="text-sm font-medium text-[#022840]">الإدارات المحلية</span>
                     </summary>
                     <div className="mt-2 ml-3 space-y-2 border-l-2 border-gray-100 pl-3">
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Arrondissements</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Annexes administratives</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Wilayas</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المقاطعات</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المكاتب الإدارية الفرعية</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">الولايات</div>
                     </div>
                   </details>
                 </div>
@@ -149,16 +149,16 @@ export default function Home() {
                       className={`flex items-center justify-between cursor-pointer list-none rounded-lg p-2 ${selectedCategory === 2 ? 'bg-gray-100' : ''}`}
                       onClick={() => handleCategoryClick(2)}
                     >
-                      <span className="text-sm font-medium text-[#022840]">Services Judiciaires</span>
+                      <span className="text-sm font-medium text-[#022840]">الخدمات القضائية</span>
                     </summary>
                     <div className="mt-2 ml-3 space-y-2 border-l-2 border-gray-100 pl-3">
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Tribunaux de Première Instance</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Cours d'Appel</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Tribunaux Administratifs</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Tribunaux de Commerce</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Adouls</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Notaires</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Huissiers de Justice</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">محاكم الدرجة الأولى</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">محاكم الاستئناف</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المحاكم الإدارية</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المحاكم التجارية</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">العدول</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">الموثقون</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المحضرون القضائيون</div>
                     </div>
                   </details>
                 </div>
@@ -173,12 +173,12 @@ export default function Home() {
                       className={`flex items-center justify-between cursor-pointer list-none rounded-lg p-2 ${selectedCategory === 3 ? 'bg-gray-100' : ''}`}
                       onClick={() => handleCategoryClick(3)}
                     >
-                      <span className="text-sm font-medium text-[#022840]">Services de Sécurité</span>
+                      <span className="text-sm font-medium text-[#022840]">خدمات الأمن</span>
                     </summary>
                     <div className="mt-2 ml-3 space-y-2 border-l-2 border-gray-100 pl-3">
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Commissariats de Police</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Gendarmerie Royale</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Postes de Police</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مراكز الشرطة</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">الدرك الملكي</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مراكز الشرطة المحلية</div>
                     </div>
                   </details>
                 </div>
@@ -193,14 +193,14 @@ export default function Home() {
                       className={`flex items-center justify-between cursor-pointer list-none rounded-lg p-2 ${selectedCategory === 4 ? 'bg-gray-100' : ''}`}
                       onClick={() => handleCategoryClick(4)}
                     >
-                      <span className="text-sm font-medium text-[#022840]">Services Fiscaux et Financiers</span>
+                      <span className="text-sm font-medium text-[#022840]">الخدمات المالية والضريبية</span>
                     </summary>
                     <div className="mt-2 ml-3 space-y-2 border-l-2 border-gray-100 pl-3">
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Centres des Impôts</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Perceptions (Recettes)</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Trésorerie Générale</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Bureaux de Douane</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Agences Bancaires Al Barid Bank</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مراكز الضرائب</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المحاسبات</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">الخزينة العامة</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مكاتب الجمارك</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">وكالات البريد المصرفي</div>
                     </div>
                   </details>
                 </div>
@@ -215,15 +215,15 @@ export default function Home() {
                       className={`flex items-center justify-between cursor-pointer list-none rounded-lg p-2 ${selectedCategory === 5 ? 'bg-gray-100' : ''}`}
                       onClick={() => handleCategoryClick(5)}
                     >
-                      <span className="text-sm font-medium text-[#022840]">Santé et Protection Sociale</span>
+                      <span className="text-sm font-medium text-[#022840]">الصحة والحماية الاجتماعية</span>
                     </summary>
                     <div className="mt-2 ml-3 space-y-2 border-l-2 border-gray-100 pl-3">
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Bureaux CNSS</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Centres AMO</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Bureaux RAMED</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Agences ANAPEC</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Centres de Santé</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Hôpitaux Publics</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مكاتب الصندوق الوطني للضمان الاجتماعي</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مراكز التأمين الإجباري</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مكاتب الراميد</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">وكالات الوكالة الوطنية للتشغيل</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مراكز الصحة</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المستشفيات العمومية</div>
                     </div>
                   </details>
                 </div>
@@ -238,14 +238,14 @@ export default function Home() {
                       className={`flex items-center justify-between cursor-pointer list-none rounded-lg p-2 ${selectedCategory === 6 ? 'bg-gray-100' : ''}`}
                       onClick={() => handleCategoryClick(6)}
                     >
-                      <span className="text-sm font-medium text-[#022840]">Services Fonciers et Techniques</span>
+                      <span className="text-sm font-medium text-[#022840]">الخدمات العقارية والتقنية</span>
                     </summary>
                     <div className="mt-2 ml-3 space-y-2 border-l-2 border-gray-100 pl-3">
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Conservation Foncière</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Cadastre</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Agences Urbaines</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Centres d'Immatriculation de Véhicules</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Bureaux d'Études Techniques</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المحافظة العقارية</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">الطابو</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">الوكالات الحضرية</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مراكز تسجيل السيارات</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مكاتب الدراسات التقنية</div>
                     </div>
                   </details>
                 </div>
@@ -260,14 +260,14 @@ export default function Home() {
                       className={`flex items-center justify-between cursor-pointer list-none rounded-lg p-2 ${selectedCategory === 7 ? 'bg-gray-100' : ''}`}
                       onClick={() => handleCategoryClick(7)}
                     >
-                      <span className="text-sm font-medium text-[#022840]">Services aux Entreprises</span>
+                      <span className="text-sm font-medium text-[#022840]">خدمات الشركات</span>
                     </summary>
                     <div className="mt-2 ml-3 space-y-2 border-l-2 border-gray-100 pl-3">
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Centres Régionaux d'Investissement</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Registre de Commerce</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">OMPIC</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Chambres de Commerce et d'Industrie</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">CNSS Entreprises</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المراكز الجهوية للاستثمار</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">سجل التجارة</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">المكتب المغربي للملكية الصناعية والتجارية</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">غرف التجارة والصناعة</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">الصندوق الوطني للضمان الاجتماعي للشركات</div>
                     </div>
                   </details>
                 </div>
@@ -282,13 +282,13 @@ export default function Home() {
                       className={`flex items-center justify-between cursor-pointer list-none rounded-lg p-2 ${selectedCategory === 8 ? 'bg-gray-100' : ''}`}
                       onClick={() => handleCategoryClick(8)}
                     >
-                      <span className="text-sm font-medium text-[#022840]">Services Publics de Base</span>
+                      <span className="text-sm font-medium text-[#022840]">الخدمات الأساسية</span>
                     </summary>
                     <div className="mt-2 ml-3 space-y-2 border-l-2 border-gray-100 pl-3">
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Bureaux de Poste</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Agences ONEE</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Régies de Distribution (Amendis, Lydec, etc.)</div>
-                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">Agences de Télécommunications</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">مكاتب البريد</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">وكالات المكتب الوطني للكهرباء والماء</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">شركات التوزيع</div>
+                      <div className="text-xs text-[#333] py-1 hover:text-[#037F8C] cursor-pointer">وكالات الاتصالات</div>
                     </div>
                   </details>
                 </div>
@@ -299,8 +299,8 @@ export default function Home() {
             <div className="md:col-span-3 border border-gray-100 rounded-xl p-6 min-h-[600px] md:ml-6">
               {/* Empty state - show only when no filters are selected */}
               <div className="text-center text-gray-400 mt-16 hidden">
-                <p className="text-xl mb-2">Aucun résultat à afficher</p>
-                <p>Veuillez sélectionner une ville et un type de service pour voir les résultats</p>
+                <p className="text-xl mb-2">لا توجد نتائج للعرض</p>
+                <p>الرجاء اختيار المدينة ونوع الخدمة لرؤية النتائج</p>
               </div>
               
               {/* Results display */}
@@ -311,11 +311,11 @@ export default function Home() {
                     <FileText className="w-6 h-6 text-[#022840]" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-[#022840]">Arrondissement Hay Hassani</h4>
-                    <p className="text-sm text-gray-500">Avenue Hassan II, Hay Hassani, Casablanca</p>
+                    <h4 className="text-lg font-medium text-[#022840]">مقاطعة حي الحسني</h4>
+                    <p className="text-sm text-gray-500">شارع الحسن الثاني، حي الحسني، الدار البيضاء</p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">Certificats administratifs</span>
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">État civil</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">الشهادات الإدارية</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">الحالة المدنية</span>
                     </div>
                   </div>
                 </div>
@@ -326,11 +326,11 @@ export default function Home() {
                     <FileText className="w-6 h-6 text-[#022840]" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-[#022840]">Tribunal de Première Instance de Casablanca</h4>
-                    <p className="text-sm text-gray-500">Boulevard Mohamed V, Centre-ville, Casablanca</p>
+                    <h4 className="text-lg font-medium text-[#022840]">محكمة الدرجة الأولى بالدار البيضاء</h4>
+                    <p className="text-sm text-gray-500">شارع محمد الخامس، وسط المدينة، الدار البيضاء</p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">Affaires civiles</span>
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">Affaires familiales</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">القضايا المدنية</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">القضايا الأسرية</span>
                     </div>
                   </div>
                 </div>
@@ -341,12 +341,12 @@ export default function Home() {
                     <FileText className="w-6 h-6 text-[#022840]" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-[#022840]">Direction Régionale des Impôts</h4>
-                    <p className="text-sm text-gray-500">Rue Al Moutanabi, Maârif, Casablanca</p>
+                    <h4 className="text-lg font-medium text-[#022840]">المديرية الجهوية للضرائب</h4>
+                    <p className="text-sm text-gray-500">شارع المتنبي، المعاريف، الدار البيضاء</p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">Impôt sur le revenu</span>
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">TVA</span>
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">Impôt foncier</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">ضريبة الدخل</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">الضريبة على القيمة المضافة</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">الضريبة العقارية</span>
                     </div>
                   </div>
                 </div>
@@ -357,12 +357,12 @@ export default function Home() {
                     <FileText className="w-6 h-6 text-[#022840]" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-[#022840]">Bureau de Poste Al Fida</h4>
-                    <p className="text-sm text-gray-500">Avenue Mohamed VI, Al Fida, Casablanca</p>
+                    <h4 className="text-lg font-medium text-[#022840]">مكتب البريد الفداء</h4>
+                    <p className="text-sm text-gray-500">شارع محمد السادس، الفداء، الدار البيضاء</p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">Services postaux</span>
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">Services financiers</span>
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">Services administratifs</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">الخدمات البريدية</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">الخدمات المالية</span>
+                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">الخدمات الإدارية</span>
                     </div>
                   </div>
                 </div>

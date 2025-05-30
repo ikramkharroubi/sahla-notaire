@@ -1,14 +1,18 @@
+'use client';
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FileText, Building2, ScrollText, Heart, Users, Scale, FileCodeIcon as FileContract, File, MessageSquare, Zap, XCircle, Package, Landmark, FileSignature, Stamp } from 'lucide-react'
 import Link from 'next/link'
+import { Badge } from "@/components/ui/badge"
+import { Clock, MapPin, Star } from "lucide-react"
 
 export function PromotionalOffers() {
   const categories = [
     {
       icon: FileText,
-      title: "Power of Attorney",
-      description: "Legal representation documents and authorizations",
+      title: "الوكالة القانونية",
+      description: "مستندات التمثيل القانوني والتفويضات",
       color: "bg-[#025373]",
       hover: "hover:bg-[#025E73]",
       iconColor: "text-[#F2F2F2]",
@@ -16,8 +20,8 @@ export function PromotionalOffers() {
     },
     {
       icon: Stamp,
-      title: "Approvals",
-      description: "Official approvals and certifications",
+      title: "الموافقات",
+      description: "الموافقات والشهادات الرسمية",
       color: "bg-[#025E73]",
       hover: "hover:bg-[#037F8C]",
       iconColor: "text-[#F2F2F2]",
@@ -25,8 +29,8 @@ export function PromotionalOffers() {
     },
     {
       icon: Building2,
-      title: "Building Permits",
-      description: "Construction and renovation licenses",
+      title: "تراخيص البناء",
+      description: "تراخيص البناء والتجديد",
       color: "bg-[#037F8C]",
       hover: "hover:bg-[#025E73]",
       iconColor: "text-[#F2F2F2]",
@@ -34,8 +38,8 @@ export function PromotionalOffers() {
     },
     {
       icon: Heart,
-      title: "Marriage Services",
-      description: "Marriage-related applications and documents",
+      title: "خدمات الزواج",
+      description: "طلبات ومستندات الزواج",
       color: "bg-[#025373]",
       hover: "hover:bg-[#025E73]",
       iconColor: "text-[#F2F2F2]",
@@ -43,8 +47,8 @@ export function PromotionalOffers() {
     },
     {
       icon: Users,
-      title: "Civil Status",
-      description: "Personal status and civil registry services",
+      title: "الحالة المدنية",
+      description: "خدمات السجل المدني والحالة الشخصية",
       color: "bg-[#025E73]",
       hover: "hover:bg-[#037F8C]",
       iconColor: "text-[#F2F2F2]",
@@ -52,8 +56,8 @@ export function PromotionalOffers() {
     },
     {
       icon: Scale,
-      title: "Obligations",
-      description: "Legal and financial commitments",
+      title: "الالتزامات",
+      description: "الالتزامات القانونية والمالية",
       color: "bg-[#037F8C]",
       hover: "hover:bg-[#025E73]",
       iconColor: "text-[#F2F2F2]",
@@ -61,8 +65,8 @@ export function PromotionalOffers() {
     },
     {
       icon: FileContract,
-      title: "Contracts",
-      description: "Contract registration and management",
+      title: "العقود",
+      description: "تسجيل وإدارة العقود",
       color: "bg-[#025373]",
       hover: "hover:bg-[#025E73]",
       iconColor: "text-[#F2F2F2]",
@@ -70,8 +74,8 @@ export function PromotionalOffers() {
     },
     {
       icon: Landmark,
-      title: "Banking & Tax",
-      description: "Financial applications and tax services",
+      title: "الخدمات المصرفية والضريبية",
+      description: "الطلبات المالية وخدمات الضرائب",
       color: "bg-[#025E73]",
       hover: "hover:bg-[#037F8C]",
       iconColor: "text-[#F2F2F2]",
@@ -79,8 +83,8 @@ export function PromotionalOffers() {
     },
     {
       icon: Package,
-      title: "Other Services",
-      description: "Additional administrative services",
+      title: "خدمات أخرى",
+      description: "خدمات إدارية إضافية",
       color: "bg-[#037F8C]",
       hover: "hover:bg-[#025E73]",
       iconColor: "text-[#F2F2F2]",
@@ -91,9 +95,9 @@ export function PromotionalOffers() {
   return (
     <section className="space-y-6">
       <div className="flex items-baseline justify-between">
-        <h2 className="text-2xl font-bold text-[#022840]">Service Categories</h2>
+        <h2 className="text-2xl font-bold text-[#022840]">العروض الترويجية</h2>
         <Button variant="link" className="text-[#A66C4B] hover:text-[#025373]" asChild>
-          <Link href="/categories">View all categories</Link>
+          <Link href="/categories">عرض جميع الفئات</Link>
         </Button>
       </div>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -120,7 +124,7 @@ export function PromotionalOffers() {
                   asChild
                 >
                   <Link href={`/services/${category.title.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}>
-                    Explore Services
+                    استكشاف الخدمات
                   </Link>
                 </Button>
               </div>

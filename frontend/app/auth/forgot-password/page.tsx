@@ -1,55 +1,109 @@
-import { NavigationBar } from '../../components/navigation-bar'
-import { Footer } from '../../components/footer'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Link from 'next/link'
+'use client';
+
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import Link from 'next/link';
+import { useAuth } from '@/hooks/useAuth';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Loader2 } from 'lucide-react';
+
+const forgotPasswordSchema = z.object({
+  email: z.string().email('البريد الإلكتروني غير صالح'),
+});
+
+type ForgotPasswordFormData = z.infer<typeof forgotPasswordSchema>;
 
 export default function ForgotPasswordPage() {
+  const { resetPassword, error: authError, isLoading } = useAuth();
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ForgotPasswordFormData>({
+    resolver: zodResolver(forgotPasswordSchema),
+  });
+
+  const onSubmit = async (data: ForgotPasswordFormData) => {
+    try {
+      setError(null);
+      await resetPassword(data.email);
+      setSuccess(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'حدث خطأ أثناء إرسال رابط إعادة التعيين');
+    }
+  };
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <NavigationBar />
-      <main className="flex-grow flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
-          <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-              Forgot your password?
-            </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
-              Enter your email address and we'll send you a link to reset your password.
-            </p>
-          </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
-            <div>
-              <Label htmlFor="email-address" className="sr-only">
-                Email address
-              </Label>
-              <Input
-                id="email-address"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="rounded-md"
-                placeholder="Email address"
-              />
-            </div>
-            <div>
-              <Button type="submit" className="w-full">
-                Send reset link
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle>نسيت كلمة المرور</CardTitle>
+          <CardDescription>أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة تعيين كلمة المرور</CardDescription>
+        </CardHeader>
+        <CardContent>
+          {success ? (
+            <div className="space-y-4">
+              <Alert>
+                <AlertDescription>
+                  تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني. يرجى التحقق من صندوق الوارد الخاص بك.
+                </AlertDescription>
+              </Alert>
+              <Button variant="outline" className="w-full" asChild>
+                <Link href="/auth/login">العودة لتسجيل الدخول</Link>
               </Button>
             </div>
-          </form>
-          <div className="text-sm text-center">
-            Remember your password?{' '}
-            <Link href="/auth/sign-in" className="font-medium text-[#006CE4] hover:text-[#005AC4]">
-              Sign in
-            </Link>
-          </div>
-        </div>
-      </main>
-      <Footer />
+          ) : (
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="email">البريد الإلكتروني</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="أدخل بريدك الإلكتروني"
+                  {...register('email')}
+                />
+                {errors.email && (
+                  <p className="text-sm text-red-500">{errors.email.message}</p>
+                )}
+              </div>
+
+              {(error || authError) && (
+                <Alert variant="destructive">
+                  <AlertDescription>{error || authError}</AlertDescription>
+                </Alert>
+              )}
+
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? (
+                  <>
+                    <Loader2 className="ml-2 h-4 w-4 animate-spin rtl:rotate-180" />
+                    جاري الإرسال...
+                  </>
+                ) : (
+                  'إرسال رابط إعادة التعيين'
+                )}
+              </Button>
+
+              <p className="text-center text-sm text-gray-600">
+                تذكرت كلمة المرور؟{' '}
+                <Link href="/auth/login" className="text-blue-600 hover:underline">
+                  تسجيل الدخول
+                </Link>
+              </p>
+            </form>
+          )}
+        </CardContent>
+      </Card>
     </div>
-  )
+  );
 }
 

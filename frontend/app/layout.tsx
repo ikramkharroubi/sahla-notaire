@@ -1,4 +1,15 @@
-import { FloatingActionButton } from './components/floating-action-button'
+import type { Metadata } from 'next';
+import { Cairo } from 'next/font/google';
+import './globals.css';
+import { AuthProvider } from '@/contexts/auth-context';
+import { FloatingActionButton } from './components/floating-action-button';
+
+const cairo = Cairo({ subsets: ['arabic'] });
+
+export const metadata: Metadata = {
+  title: 'Sahla Not',
+  description: 'Your one-stop solution for all procedures and documents',
+};
 
 export default function RootLayout({
   children,
@@ -6,19 +17,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
-        <FloatingActionButton />
-        {children}
+    <html lang="ar" dir="rtl">
+      <body className={cairo.className}>
+        <AuthProvider>
+          {children}
+          <FloatingActionButton />
+        </AuthProvider>
       </body>
     </html>
   )
 }
-
-
-import './globals.css'
-
-export const metadata = {
-      generator: 'v0.dev'
-    };
 

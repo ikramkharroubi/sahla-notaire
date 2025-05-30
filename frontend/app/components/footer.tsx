@@ -8,46 +8,56 @@ export function Footer() {
       <div className="container mx-auto max-w-6xl px-4 py-3">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div>
-            <h3 className="font-bold text-base mb-2">About CivicEase</h3>
-            <p className="text-xs text-black/80">CivicEase simplifies administrative tasks, making it easier for citizens to access and process important documents and services.</p>
+            <h3 className="font-bold text-base mb-2">عن سهلة نوت</h3>
+            <p className="text-xs text-black/80">سهلة نوت تبسط المهام الإدارية، مما يسهل على المواطنين الوصول إلى المستندات والخدمات المهمة ومعالجتها.</p>
           </div>
           <div>
-            <h3 className="font-bold text-base mb-2">Quick Links</h3>
-            <ul className="space-y-1">
-              <li><Link href="/documents" className="text-xs hover:text-[#A66C4B]">Documents</Link></li>
-              <li><Link href="/business" className="text-xs hover:text-[#A66C4B]">Business Services</Link></li>
-              <li><Link href="/faq" className="text-xs hover:text-[#A66C4B]">FAQ</Link></li>
-              <li><Link href="/contact" className="text-xs hover:text-[#A66C4B]">Contact Us</Link></li>
+            <h3 className="font-semibold text-lg mb-4">روابط سريعة</h3>
+            <ul className="space-y-2">
+              <li><Link href="/services" className="text-gray-600 hover:text-[#037F8C]">الخدمات</Link></li>
+              <li><Link href="/documents" className="text-gray-600 hover:text-[#037F8C]">المستندات</Link></li>
+              <li><Link href="/about" className="text-gray-600 hover:text-[#037F8C]">من نحن</Link></li>
+              <li><Link href="/contact" className="text-gray-600 hover:text-[#037F8C]">اتصل بنا</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-base mb-2">Legal</h3>
+            <h3 className="font-bold text-base mb-2">قانوني</h3>
             <ul className="space-y-1">
-              <li><Link href="/terms" className="text-xs hover:text-[#A66C4B]">Terms of Service</Link></li>
-              <li><Link href="/privacy" className="text-xs hover:text-[#A66C4B]">Privacy Policy</Link></li>
-              <li><Link href="/accessibility" className="text-xs hover:text-[#A66C4B]">Accessibility</Link></li>
+              <li><Link href="/terms" className="text-xs hover:text-[#A66C4B]">شروط الخدمة</Link></li>
+              <li><Link href="/privacy" className="text-xs hover:text-[#A66C4B]">سياسة الخصوصية</Link></li>
+              <li><Link href="/accessibility" className="text-xs hover:text-[#A66C4B]">إمكانية الوصول</Link></li>
             </ul>
           </div>
-          <div className="relative flex flex-col">
-            <div className="absolute right-0 top-1/2 -translate-y-1/2">
-              <Image 
-                src="/moroccomap.png"
-                alt="Map of Morocco"
-                width={150}
-                height={150}
-              />
-            </div>
-            <h3 className="font-bold text-base mb-2">Connect with Us</h3>
-            <div className="flex space-x-3">
-              <Link href="#" className="hover:text-[#A66C4B]"><Facebook size={18} /></Link>
-              <Link href="#" className="hover:text-[#A66C4B]"><Twitter size={18} /></Link>
-              <Link href="#" className="hover:text-[#A66C4B]"><Instagram size={18} /></Link>
-              <Link href="#" className="hover:text-[#A66C4B]"><Linkedin size={18} /></Link>
+          <div>
+            <h3 className="font-semibold text-lg mb-4">تواصل معنا</h3>
+            <ul className="space-y-2">
+              <li className="text-gray-600">البريد الإلكتروني: info@example.com</li>
+              <li className="text-gray-600">الهاتف: +123 456 7890</li>
+              <li className="text-gray-600">العنوان: شارع الرئيسي، المدينة</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg mb-4">تابعنا</h3>
+            <div className="flex space-x-4 rtl:space-x-reverse">
+              <Link href="#" className="text-gray-600 hover:text-[#037F8C]">
+                <span className="sr-only">فيسبوك</span>
+                <Facebook className="h-6 w-6" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-[#037F8C]">
+                <span className="sr-only">تويتر</span>
+                <Twitter className="h-6 w-6" />
+              </Link>
+              <Link href="#" className="text-gray-600 hover:text-[#037F8C]">
+                <span className="sr-only">انستغرام</span>
+                <Instagram className="h-6 w-6" />
+              </Link>
             </div>
           </div>
         </div>
-        <div className="mt-4 pt-4 border-t border-[#E5E5E5] text-center text-xs text-black/70">
-          © {new Date().getFullYear()} CivicEase. All rights reserved.
+        <div className="mt-4 pt-4 border-t border-gray-200 text-center">
+          <p className="text-center text-gray-600">
+            © {new Date().getFullYear()} جميع الحقوق محفوظة
+          </p>
         </div>
       </div>
     </footer>

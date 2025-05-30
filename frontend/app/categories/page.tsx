@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { UserRound, Heart, Briefcase, Home, Globe, Car, GraduationCap, Stethoscope, Wallet, Scale, Trash2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 // Map of icon names to their components
 const iconMap = {
@@ -45,10 +46,21 @@ interface CategoryResponse {
   icon_name: string;
 }
 
+interface TransformedCategory {
+  id: number;
+  icon: any; // Lucide icon component
+  title: string;
+  description: string;
+  color: string;
+  hover: string;
+  iconColor: string;
+}
+
 export default function CategoriesPage() {
-  const [categories, setCategories] = useState([])
+  const router = useRouter()
+  const [categories, setCategories] = useState<TransformedCategory[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -84,7 +96,7 @@ export default function CategoriesPage() {
         setCategories(transformedCategories)
       } catch (err) {
         console.error('Error details:', err)
-        setError(err instanceof Error ? err.message : 'An unknown error occurred' as any)
+        setError(err instanceof Error ? err.message : 'An unknown error occurred')
       } finally {
         setLoading(false)
       }
@@ -99,7 +111,7 @@ export default function CategoriesPage() {
         <NavigationBar />
         <main className="flex-grow container mx-auto max-w-6xl px-4 py-8">
           <div className="flex items-center justify-center h-64">
-            <p className="text-gray-600">Loading categories...</p>
+            <p className="text-gray-600">جاري تحميل الفئات...</p>
           </div>
         </main>
         <Footer />
@@ -113,7 +125,7 @@ export default function CategoriesPage() {
         <NavigationBar />
         <main className="flex-grow container mx-auto max-w-6xl px-4 py-8">
           <div className="flex items-center justify-center h-64">
-            <p className="text-red-600">Error loading categories: {error}</p>
+            <p className="text-red-600">خطأ في تحميل الفئات: {error}</p>
           </div>
         </main>
         <Footer />
@@ -126,37 +138,42 @@ export default function CategoriesPage() {
       <NavigationBar />
       <main className="flex-grow container mx-auto max-w-6xl px-4 py-8 space-y-8">
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold">Service Categories</h1>
-          <p className="text-gray-600">Browse through our comprehensive range of administrative and government services</p>
+          <h1 className="text-4xl font-bold">فئات الخدمات</h1>
+          <p className="text-gray-600">تصفح مجموعة شاملة من الخدمات الإدارية والحكومية</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category: {
-            id: string;
-            hover: string;
-            color: string;
-            title: string;
-            description: string;
-          }) => (
-            <Card 
-              key={category.id} 
-              className={`transition-colors ${category.hover} cursor-pointer`}
-            >
-              <CardContent className="p-6">
-                <div className={`rounded-lg ${category.color} p-6 space-y-4`}>
-                  <div className="flex items-start justify-between">
-                    <div className="space-y-2">
-                      <h3 className="font-bold text-lg">{category.title}</h3>
-                      <div className="text-sm text-gray-600">{category.description}</div>
+          {categories.map((category: TransformedCategory) => {
+            const Icon = category.icon
+            return (
+              <Card 
+                key={category.id} 
+                className={`transition-colors ${category.hover} cursor-pointer`}
+                onClick={() => router.push(`/services/${category.title.toLowerCase().replace(/\s+/g, '-')}`)}
+              >
+                <CardContent className="p-6">
+                  <div className={`rounded-lg ${category.color} p-6 space-y-4`}>
+                    <div className="flex items-start justify-between">
+                      <div className="space-y-2">
+                        <h3 className="font-bold text-lg">{category.title}</h3>
+                        <div className="text-sm text-gray-600">{category.description}</div>
+                      </div>
+                      <Icon className={`w-8 h-8 ${category.iconColor}`} />
                     </div>
-                    <div className={`w-8 h-8`} />
+                    <Button 
+                      variant="secondary" 
+                      className="w-full"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        router.push(`/services/${category.title.toLowerCase().replace(/\s+/g, '-')}`);
+                      }}
+                    >
+                      استكشاف الخدمات
+                    </Button>
                   </div>
-                  <Button variant="secondary" className="w-full">
-                    Explore Services
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            )
+          })}
         </div>
       </main>
       <Footer />

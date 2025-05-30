@@ -1,0 +1,82 @@
+{
+  "navigation": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "documents": "المستندات",
+    "business": "الأعمال",
+    "about": "من نحن",
+    "contact": "اتصل بنا",
+    "faq": "الأسئلة الشائعة",
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "logout": "تسجيل الخروج",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات"
+  },
+  "buttons": {
+    "submit": "إرسال",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "search": "بحث",
+    "learnMore": "اعرف المزيد",
+    "explore": "استكشاف",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "continue": "متابعة",
+    "reset": "إعادة تعيين",
+    "send": "إرسال",
+    "download": "تحميل",
+    "upload": "رفع",
+    "confirm": "تأكيد",
+    "close": "إغلاق"
+  },
+  "forms": {
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "fullName": "الاسم الكامل",
+    "phone": "رقم الهاتف",
+    "message": "الرسالة",
+    "subject": "الموضوع",
+    "search": "بحث",
+    "required": "مطلوب",
+    "optional": "اختياري"
+  },
+  "messages": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "success": "تم بنجاح",
+    "noResults": "لا توجد نتائج",
+    "tryAgain": "حاول مرة أخرى",
+    "confirmDelete": "هل أنت متأكد من الحذف؟",
+    "changesSaved": "تم حفظ التغييرات",
+    "changesDiscarded": "تم تجاهل التغييرات",
+    "sessionExpired": "انتهت جلستك، يرجى تسجيل الدخول مرة أخرى"
+  },
+  "footer": {
+    "about": "عن الشركة",
+    "quickLinks": "روابط سريعة",
+    "legal": "قانوني",
+    "terms": "شروط الخدمة",
+    "privacy": "سياسة الخصوصية",
+    "accessibility": "إمكانية الوصول",
+    "contact": "اتصل بنا",
+    "followUs": "تابعنا",
+    "allRightsReserved": "جميع الحقوق محفوظة"
+  },
+  "errors": {
+    "required": "هذا الحقل مطلوب",
+    "invalidEmail": "البريد الإلكتروني غير صالح",
+    "invalidPassword": "كلمة المرور غير صالحة",
+    "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
+    "invalidPhone": "رقم الهاتف غير صالح",
+    "serverError": "خطأ في الخادم",
+    "networkError": "خطأ في الاتصال",
+    "notFound": "غير موجود",
+    "unauthorized": "غير مصرح",
+    "forbidden": "ممنوع"
+  }
+} 

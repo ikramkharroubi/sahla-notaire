@@ -1,40 +1,35 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import UserProfile, Address
+from django.contrib.auth.password_validation import validate_password
 
 User = get_user_model()
 
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['id', 'email', 'username', 'first_name', 'last_name', 'user_type', 'is_verified']
-        read_only_fields = ['is_verified']
-
 class UserRegistrationSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
-    password_confirm = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
-    
+    password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
+    password2 = serializers.CharField(write_only=True, required=True)
+    email = serializers.EmailField(required=True)
+
     class Meta:
         model = User
-        fields = ['email', 'username', 'password', 'password_confirm', 'first_name', 'last_name']
-    
-    def validate(self, data):
-        if data['password'] != data['password_confirm']:
-            raise serializers.ValidationError({"password_confirm": "Passwords don't match"})
-        return data
-    
+        fields = ('id', 'email', 'password', 'password2', 'first_name', 'last_name')
+        extra_kwargs = {
+            'first_name': {'required': True},
+            'last_name': {'required': True}
+        }
+
+    def validate_email(self, value):
+        if User.objects.filter(email=value).exists():
+            raise serializers.ValidationError("A user with this email already exists.")
+        return value
+
+    def validate(self, attrs):
+        if attrs['password'] != attrs['password2']:
+            raise serializers.ValidationError({"password": "Password fields didn't match."})
+        return attrs
+
     def create(self, validated_data):
-        validated_data.pop('password_confirm')
+        validated_data.pop('password2')
+        # Use email as username
+        validated_data['username'] = validated_data['email']
         user = User.objects.create_user(**validated_data)
-        return user
-
-class UserProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserProfile
-        fields = ['phone_number', 'profile_picture', 'date_of_birth', 'national_id']
-
-class AddressSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Address
-        fields = ['id', 'address_line1', 'address_line2', 'city', 'state_province', 
-                  'postal_code', 'is_default']
+        return user 

@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button"
 
 export function ServicesMenu() {
   const services = [
-    { icon: FileText, label: "Power of Attorney", href: "/services/power-of-attorney" },
-    { icon: Building2, label: "Building Permits", href: "/services/building-permits" },
-    { icon: Heart, label: "Marriage Services", href: "/services/marriage" },
-    { icon: Users, label: "Civil Status", href: "/services/civil-status" },
-    { icon: Scale, label: "Obligations", href: "/services/obligations" },
-    { icon: FileContract, label: "Contracts", href: "/services/contracts" },
-    { icon: MessageSquare, label: "Complaints", href: "/services/complaints" },
+    { icon: FileText, label: "الوكالة القانونية", href: "/services/power-of-attorney" },
+    { icon: Building2, label: "تراخيص البناء", href: "/services/building-permits" },
+    { icon: Heart, label: "خدمات الزواج", href: "/services/marriage" },
+    { icon: Users, label: "الحالة المدنية", href: "/services/civil-status" },
+    { icon: Scale, label: "الالتزامات", href: "/services/obligations" },
+    { icon: FileContract, label: "العقود", href: "/services/contracts" },
+    { icon: MessageSquare, label: "الشكاوى", href: "/services/complaints" },
   ]
 
   return (
@@ -38,8 +38,22 @@ export function ServicesMenu() {
             <div className="p-2 rounded-lg group-hover:bg-[#0B2644]/5 transition-colors">
               <MoreHorizontal className="w-6 h-6" />
             </div>
-            <span className="text-center whitespace-nowrap">More Services</span>
+            <span className="text-center whitespace-nowrap">المزيد من الخدمات</span>
           </Link>
+        </div>
+        <div className="mt-4">
+          <Button variant="ghost" className="w-full justify-start">
+            تجديد جواز السفر
+          </Button>
+          <Button variant="ghost" className="w-full justify-start">
+            تسجيل الأعمال
+          </Button>
+          <Button variant="ghost" className="w-full justify-start">
+            تجديد رخصة القيادة
+          </Button>
+          <Button variant="ghost" className="w-full justify-start">
+            تسجيل سند الملكية
+          </Button>
         </div>
       </div>
     </div>

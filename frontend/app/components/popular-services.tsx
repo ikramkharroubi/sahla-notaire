@@ -6,35 +6,35 @@ export function PopularServices() {
   return (
     <section className="space-y-6">
       <div className="flex items-baseline justify-between">
-        <h2 className="text-2xl font-bold text-[#022840]">Popular Services</h2>
-        <Button variant="link" className="text-[#A66C4B] hover:text-[#025373]">View all services</Button>
+        <h2 className="text-2xl font-bold text-[#022840]">الخدمات الشائعة</h2>
+        <Button variant="link" className="text-[#A66C4B] hover:text-[#025373]">عرض جميع الخدمات</Button>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {[
           {
-            title: "Passport Renewal",
-            processing: "2-3 days",
+            title: "تجديد جواز السفر",
+            processing: "2-3 أيام",
             rating: "4.8",
             reviews: "2,421",
             image: "/placeholder.svg?height=200&width=280",
           },
           {
-            title: "Business Registration",
-            processing: "1-2 days",
+            title: "تسجيل الأعمال",
+            processing: "1-2 يوم",
             rating: "4.9",
             reviews: "1,832",
             image: "/placeholder.svg?height=200&width=280",
           },
           {
-            title: "Driver's License",
-            processing: "Same day",
+            title: "رخصة القيادة",
+            processing: "نفس اليوم",
             rating: "4.7",
             reviews: "3,140",
             image: "/placeholder.svg?height=200&width=280",
           },
           {
-            title: "Property Deed",
-            processing: "3-4 days",
+            title: "سند الملكية",
+            processing: "3-4 أيام",
             rating: "4.6",
             reviews: "956",
             image: "/placeholder.svg?height=200&width=280",
@@ -65,7 +65,7 @@ export function PopularServices() {
                     index % 2 === 0 ? 'bg-[#037F8C] hover:bg-[#025373]' : 'bg-[#025373] hover:bg-[#037F8C]'
                   }`}
                 >
-                  View Details
+                  عرض التفاصيل
                 </Button>
               </div>
             </CardContent>

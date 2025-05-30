@@ -8,49 +8,49 @@ import { Clock, Star } from 'lucide-react'
 export default function ServicesPage() {
   const services = [
     {
-      title: "Passport Renewal",
-      category: "Personal Documents",
-      processing: "2-3 days",
+      title: "تجديد جواز السفر",
+      category: "وثائق شخصية",
+      processing: "2-3 أيام",
       rating: "4.8",
       reviews: "2,421",
       image: "/placeholder.svg?height=200&width=280",
     },
     {
-      title: "Business Registration",
-      category: "Business Services",
-      processing: "1-2 days",
+      title: "تسجيل الأعمال",
+      category: "خدمات الأعمال",
+      processing: "1-2 يوم",
       rating: "4.9",
       reviews: "1,832",
       image: "/placeholder.svg?height=200&width=280",
     },
     {
-      title: "Driver's License Renewal",
-      category: "Transport",
-      processing: "Same day",
+      title: "تجديد رخصة القيادة",
+      category: "النقل",
+      processing: "نفس اليوم",
       rating: "4.7",
       reviews: "3,140",
       image: "/placeholder.svg?height=200&width=280",
     },
     {
-      title: "Property Deed Registration",
-      category: "Housing",
-      processing: "3-4 days",
+      title: "تسجيل سند الملكية",
+      category: "الإسكان",
+      processing: "3-4 أيام",
       rating: "4.6",
       reviews: "956",
       image: "/placeholder.svg?height=200&width=280",
     },
     {
-      title: "Marriage Certificate",
-      category: "Personal Documents",
-      processing: "1-2 days",
+      title: "شهادة الزواج",
+      category: "وثائق شخصية",
+      processing: "1-2 يوم",
       rating: "4.8",
       reviews: "1,245",
       image: "/placeholder.svg?height=200&width=280",
     },
     {
-      title: "Tax Filing Assistance",
-      category: "Business Services",
-      processing: "2-3 days",
+      title: "مساعدة في تقديم الضرائب",
+      category: "خدمات الأعمال",
+      processing: "2-3 أيام",
       rating: "4.7",
       reviews: "2,890",
       image: "/placeholder.svg?height=200&width=280",
@@ -62,8 +62,8 @@ export default function ServicesPage() {
       <NavigationBar />
       <section className="bg-[#0B2644] text-white py-16 px-4">
         <div className="container mx-auto max-w-6xl space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold">Our Services</h1>
-          <p className="text-xl text-gray-300">Find and process all your important documents in one place</p>
+          <h1 className="text-4xl md:text-5xl font-bold">خدماتنا</h1>
+          <p className="text-xl text-gray-300">ابحث وقم بمعالجة جميع وثائقك المهمة في مكان واحد</p>
           <SearchForm />
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function ServicesPage() {
                       <span className="text-gray-400">({service.reviews})</span>
                     </div>
                   </div>
-                  <Button className="w-full">View Details</Button>
+                  <Button className="w-full">عرض التفاصيل</Button>
                 </div>
               </CardContent>
             </Card>

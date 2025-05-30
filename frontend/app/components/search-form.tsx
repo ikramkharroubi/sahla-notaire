@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from 'react'
 import { Search } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -12,31 +13,25 @@ import {
 } from "@/components/ui/select"
 
 export function SearchForm() {
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle search logic here
+    console.log('Searching for:', searchQuery)
+  }
+
   return (
-    <div className="bg-white rounded-xl p-3 shadow-lg flex flex-col md:flex-row gap-3">
-      <div className="flex-grow relative">
-        <Input 
-          type="text" 
-          placeholder="Que recherchez-vous ?"
-          className="pl-10 border-none bg-[#F8F9FA] placeholder-[#022840]/50"
-        />
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[#022840]/40" />
-      </div>
-      <Select defaultValue="all">
-        <SelectTrigger className="w-full md:w-[180px] border-none bg-[#F8F9FA]">
-          <SelectValue placeholder="Catégorie" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">Toutes les catégories</SelectItem>
-          <SelectItem value="civil">État civil</SelectItem>
-          <SelectItem value="legal">Documents légaux</SelectItem>
-          <SelectItem value="business">Services aux entreprises</SelectItem>
-        </SelectContent>
-      </Select>
-      <Button className="bg-[#022840] hover:bg-[#022840]/90 text-white md:w-[120px]">
-        Rechercher
+    <form onSubmit={handleSubmit} className="flex gap-2">
+      <Input
+        type="text"
+        placeholder="ابحث عن الخدمات..."
+        className="w-full"
+      />
+      <Button type="submit" className="bg-[#037F8C] text-white hover:bg-[#037F8C]/90">
+        بحث
       </Button>
-    </div>
+    </form>
   )
 }
 
