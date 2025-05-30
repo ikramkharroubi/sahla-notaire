@@ -168,10 +168,4 @@ npm run dev
 - Frontend development server runs on `http://localhost:3000`
 - API documentation available at `http://localhost:8000/api/docs/`
 
-## 📝 License
 
-[Add your license information here]
-
-## 👥 Contributing
-
-[Add contribution guidelines here]
