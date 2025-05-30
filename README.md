@@ -95,7 +95,8 @@ A comprehensive Moroccan administrative services platform that centralizes admin
   - Recharts (charts)
 - **Development**: TypeScript, PostCSS
 
-## 📁 Project Structure
+
+## �� Project Structure
 
 ```
 sahla-not/
@@ -167,5 +168,15 @@ npm run dev
 - Backend API runs on `http://localhost:8000`
 - Frontend development server runs on `http://localhost:3000`
 - API documentation available at `http://localhost:8000/api/docs/`
+
+## 👥 Development Team
+
+### Ikram Kharroubi
+- **GitHub**: [@ikramkharroubi](https://github.com/ikramkharroubi)
+- **Role**: Full Stack Developer
+
+### Ilyas Belaoud
+- **GitHub**: [@ilyasbelaoud](https://github.com/ilyasbelaoud)
+- **Role**: Full Stack Developer
 
 
