@@ -49,7 +49,7 @@ A comprehensive Moroccan administrative services platform that centralizes admin
    - Improves access to administrative services
 
 9. **Project Scalability**
-   - Expandable to additional services (tourism, health, education, justice)
+   - Expandable to additional services (health, education, justice...)
    - Adaptable to other countries with similar contexts
 
 ![Procedures](screenshots/procedure.png)
