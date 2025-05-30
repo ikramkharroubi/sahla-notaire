@@ -96,7 +96,7 @@ A comprehensive Moroccan administrative services platform that centralizes admin
 - **Development**: TypeScript, PostCSS
 
 
-## �� Project Structure
+## 🛠️ Project Structure
 
 ```
 sahla-not/
@@ -172,11 +172,25 @@ npm run dev
 ## 👥 Development Team
 
 ### Ikram Kharroubi
+<img src="https://avatars.githubusercontent.com/u/174111793?v=4" alt="Ikram Kharroubi" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"/>
+
 - **GitHub**: [@ikramkharroubi](https://github.com/ikramkharroubi)
-- **Role**: Full Stack Developer
+- **Contributions**:
+  - Led the development of the intelligent form-filling assistance system
+  - Implemented the administrative procedures database architecture
+  - Developed the multi-language support system (i18n)
+  - Created the user authentication and authorization system
+  - Designed and implemented the responsive UI components using Radix UI
 
 ### Ilyas Belaoud
+<img src="https://avatars.githubusercontent.com/u/81628421?v=4" alt="Ilyas Belaoud" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"/>
+
 - **GitHub**: [@ilyasbelaoud](https://github.com/ilyasbelaoud)
-- **Role**: Full Stack Developer
+- **Contributions**:
+  - Built the RESTful API endpoints using Django REST Framework
+  - Implemented the document processing and validation system
+  - Developed the search and filtering functionality
+  - Created the admin dashboard interface
+  - Integrated the database with MySQL and optimized queries
 
 
